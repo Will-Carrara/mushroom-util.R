@@ -1,7 +1,7 @@
 # convert and create numeric dataframe (False Deathcap)
 amanita_citrina = function(mush){
 
-  mush$class <- as.numeric(mush$class) -3
+  mush$class <- as.numeric(mush$class) -1
   mush$cap_shape <- as.numeric(mush$cap_shape)
   mush$cap_surface <- as.numeric(mush$cap_surface)
   mush$cap_color <- as.numeric(mush$cap_color)
