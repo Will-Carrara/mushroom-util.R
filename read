@@ -1,0 +1,207 @@
+# Read & Process (Bearded Fieldcap)
+agrocybe_molesta = function(){
+
+  data = "https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data"
+  mush = read.csv(url(data), na.strings = "?")
+  
+  names(mush) = c("class", "cap_shape", "cap_surface", "cap_color", "bruises", "odor", "gill_attachment", "gill_spacing", "gill_size", "gill_color", "stalk_shape", "stalk_root", "stalk_surface_above_ring", "stalk_surface_below_ring", "stalk_color_above_ring", "stalk_color_below_ring", "veil_type", "veil_color", "ring_number", "ring_type", "spore_print_color", "population", "habitat")
+
+  # class
+  levels(mush$class) = c(levels(mush$class), c("Poisonous","Edible"))
+  mush$class[mush$class == "e"] = "edible"
+  mush$class[mush$class == 'p'] = "poisonous"
+
+  # cap_shape
+  levels(mush$cap_shape) = c(levels(mush$cap_shape), c("Bell","Conical","Convex","Flat","Knobbed","Sunken"))
+  mush$cap_shape[mush$cap_shape == "b"] = "Bell"
+  mush$cap_shape[mush$cap_shape == "c"] = "Conical"
+  mush$cap_shape[mush$cap_shape == "x"] = "Convex"
+  mush$cap_shape[mush$cap_shape == "f"] = "Flat"
+  mush$cap_shape[mush$cap_shape == "k"] = "Knobbed"
+  mush$cap_shape[mush$cap_shape == "s"] = "Sunken"
+  
+  # cap_surface
+  levels(mush$cap_surface) = c(levels(mush$cap_surface), c("Fibrous", "Grooves", "Scaly", "Smooth"))
+  mush$cap_surface[mush$cap_surface == "f"] = "Fibrous"
+  mush$cap_surface[mush$cap_surface == "g"] = "Grooves"
+  mush$cap_surface[mush$cap_surface == "y"] = "Scaly"
+  mush$cap_surface[mush$cap_surface == "s"] = "Smooth"
+  
+  # cap_color
+  levels(mush$cap_color) = c(levels(mush$cap_color), c("Brown", "Buff", "Cinnamon", "Gray", "Green", "Pink", "Purple", "Red", "White", "Yellow"))
+  mush$cap_color[mush$cap_color == "n"] = "Brown"
+  mush$cap_color[mush$cap_color == "b"] = "Buff"
+  mush$cap_color[mush$cap_color == "c"] = "Cinnamon"
+  mush$cap_color[mush$cap_color == "g"] = "Gray"
+  mush$cap_color[mush$cap_color == "r"] = "Green"
+  mush$cap_color[mush$cap_color == "p"] = "Pink"
+  mush$cap_color[mush$cap_color == "u"] = "Purple"
+  mush$cap_color[mush$cap_color == "e"] = "Red"
+  mush$cap_color[mush$cap_color == "w"] = "White"
+  mush$cap_color[mush$cap_color == "y"] = "Yellow"
+
+  # bruises
+  levels(mush$bruises) = c(levels(mush$bruises), c("True","False"))
+  mush$bruises[mush$bruises == "t"] = "True"
+  mush$bruises[mush$bruises == "f"] = "False"
+    
+  # odor
+  levels(mush$odor) = c(levels(mush$odor), c("Almond", "Anise", "Creosote", "Fishy", "Foul", "Musty", "None", "Pungent", "Spicy"))
+  mush$odor[mush$odor == "a"] = "Almond"
+  mush$odor[mush$odor == "l"] = "Anise"
+  mush$odor[mush$odor == "c"] = "Creosote"
+  mush$odor[mush$odor == "y"] = "Fishy"
+  mush$odor[mush$odor == "f"] = "Foul"
+  mush$odor[mush$odor == "m"] = "Musty"
+  mush$odor[mush$odor == "n"] = "None"
+  mush$odor[mush$odor == "p"] = "Pungent"
+  mush$odor[mush$odor == "s"] = "Spicy"
+  
+  # gill_attachment
+  levels(mush$gill_attachment) = c(levels(mush$gill_attachment), c("Attached","Descending","Free","Notched"))
+  mush$gill_attachment[mush$gill_attachment == "a"] = "Attached"
+  mush$gill_attachment[mush$gill_attachment == "d"] = "Descending"
+  mush$gill_attachment[mush$gill_attachment == "f"] = "Free"
+  mush$gill_attachment[mush$gill_attachment == "n"] = "Notched"
+  
+  # gill_spacing
+  levels(mush$gill_spacing) = c(levels(mush$gill_spacing), c("Close","Crowded","Distant"))
+  mush$gill_spacing[mush$gill_spacing == "c"] = "Close"
+  mush$gill_spacing[mush$gill_spacing == "w"] = "Crowded"
+  mush$gill_spacing[mush$gill_spacing == "d"] = "Distant"
+  
+  # gill_size
+  levels(mush$gill_size) = c(levels(mush$gill_size), c("Broad","Narrow"))
+  mush$gill_size[mush$gill_size == "b"] = "Broad"
+  mush$gill_size[mush$gill_size == "n"] = "Narrow"
+  
+  # gill_color
+  levels(mush$gill_color) = c(levels(mush$gill_color), c("Black","Brown","Buff","Chocolate","Gray","Green","Orange","Pink","Purple","Red","White","Yellow"))
+  mush$gill_color[mush$gill_color == "k"] = "Black"
+  mush$gill_color[mush$gill_color == "n"] = "Brown"
+  mush$gill_color[mush$gill_color == "b"] = "Buff"
+  mush$gill_color[mush$gill_color == "h"] = "Chocolate"
+  mush$gill_color[mush$gill_color == "g"] = "Gray"
+  mush$gill_color[mush$gill_color == "r"] = "Green"
+  mush$gill_color[mush$gill_color == "o"] = "Orange"
+  mush$gill_color[mush$gill_color == "p"] = "Pink"
+  mush$gill_color[mush$gill_color == "u"] = "Purple"
+  mush$gill_color[mush$gill_color == "e"] = "Red"
+  mush$gill_color[mush$gill_color == "w"] = "White"
+  mush$gill_color[mush$gill_color == "y"] = "Yellow"
+  
+  # stalk_shape
+  levels(mush$stalk_shape) = c(levels(mush$stalk_shape), c("Enlarging","Tapering"))
+  mush$stalk_shape[mush$stalk_shape == "e"] = "Enlarging"
+  mush$stalk_shape[mush$stalk_shape == "t"] = "Tapering"
+  
+  # stalk_root
+  levels(mush$stalk_root) = c(levels(mush$stalk_root), c("Bulbous","Club","Cup","Equal","Rhizomorphs","Rooted","Missing"))
+  mush$stalk_root[mush$stalk_root == "b"] = "Bulbous"
+  mush$stalk_root[mush$stalk_root == "c"] = "Club"
+  mush$stalk_root[mush$stalk_root == "u"] = "Cup"
+  mush$stalk_root[mush$stalk_root == "e"] = "Equal"
+  mush$stalk_root[mush$stalk_root == "z"] = "Rhizomorphs"
+  mush$stalk_root[mush$stalk_root == "r"] = "Rooted"
+  mush$stalk_root[mush$stalk_root == "?"] = "Missing"
+  
+  # stalk_surface_above_ring
+  levels(mush$stalk_surface_above_ring) = c(levels(mush$stalk_surface_above_ring), c("Fibrous","Scaly","Silky","Smooth"))
+  mush$stalk_surface_above_ring[mush$stalk_surface_above_ring == "f"] = "Fibrous"
+  mush$stalk_surface_above_ring[mush$stalk_surface_above_ring == "y"] = "Scaly"
+  mush$stalk_surface_above_ring[mush$stalk_surface_above_ring == "k"] = "Silky"
+  mush$stalk_surface_above_ring[mush$stalk_surface_above_ring == "s"] = "Smooth"
+
+  # stalk_surface_below_ring
+  levels(mush$stalk_surface_below_ring) = c(levels(mush$stalk_surface_below_ring), c("Fibrous","Scaly","Silky","Smooth"))
+  mush$stalk_surface_below_ring[mush$stalk_surface_below_ring == "f"] = "Fibrous"
+  mush$stalk_surface_below_ring[mush$stalk_surface_below_ring == "y"] = "Scaly"
+  mush$stalk_surface_below_ring[mush$stalk_surface_below_ring == "k"] = "Silky"
+  mush$stalk_surface_below_ring[mush$stalk_surface_below_ring == "s"] = "Smooth"
+  
+  # stalk_color_above_ring
+  levels(mush$stalk_color_above_ring) = c(levels(mush$stalk_color_above_ring), c("Brown","Buff","Cinnamon","Gray","Orange","Pink","Red","White","Yellow"))
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "n"] = "Brown"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "b"] = "Buff"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "c"] = "Cinnamon"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "g"] = "Gray"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "o"] = "Orange"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "p"] = "Pink"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "e"] = "Red"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "w"] = "White"
+  mush$stalk_color_above_ring[mush$stalk_color_above_ring == "y"] = "Yellow"
+  
+  # stalk_color_below_ring
+  levels(mush$stalk_color_below_ring) = c(levels(mush$stalk_color_below_ring), c("Brown","Buff","Cinnamon","Gray","Orange","Pink","Red","White","Yellow"))
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "n"] = "Brown"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "b"] = "Buff"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "c"] = "Cinnamon"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "g"] = "Gray"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "o"] = "Orange"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "p"] = "Pink"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "e"] = "Red"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "w"] = "White"
+  mush$stalk_color_below_ring[mush$stalk_color_below_ring == "y"] = "Yellow"
+  
+  # veil_type
+  levels(mush$veil_type) = c(levels(mush$veil_type), c("Partial","Universal"))
+  mush$veil_type[mush$veil_type == "p"] = "Partial"
+  mush$veil_type[mush$veil_type == "u"] = "Universal"
+  
+  # veil_color
+  levels(mush$veil_color) = c(levels(mush$veil_color), c("Brown","Orange","White","Yellow"))
+  mush$veil_color[mush$veil_color == "n"] = "Brown"
+  mush$veil_color[mush$veil_color == "o"] = "Orange"
+  mush$veil_color[mush$veil_color == "w"] = "White"
+  mush$veil_color[mush$veil_color == "y"] = "Yellow"
+  
+  # ring_number
+  levels(mush$ring_number) = c(levels(mush$ring_number), c("None","One","Two"))
+  mush$ring_number[mush$ring_number == "n"] = "None"
+  mush$ring_number[mush$ring_number == "o"] = "One"
+  mush$ring_number[mush$ring_number == "t"] = "Two"
+  
+  # ring_type
+  levels(mush$ring_type) = c(levels(mush$ring_type), c("Cobwebby","Evanescent","Flaring","Large","None","Pendant","Sheathing","Zone"))
+  mush$ring_type[mush$ring_type == "c"] = "Cobwebby"
+  mush$ring_type[mush$ring_type == "e"] = "Evanescent"
+  mush$ring_type[mush$ring_type == "f"] = "Flaring"
+  mush$ring_type[mush$ring_type == "l"] = "Large"
+  mush$ring_type[mush$ring_type == "n"] = "None"
+  mush$ring_type[mush$ring_type == "p"] = "Pendant"
+  mush$ring_type[mush$ring_type == "s"] = "Sheathing"
+  mush$ring_type[mush$ring_type == "z"] = "Zone"
+  
+  # spore_print_color
+  levels(mush$spore_print_color) = c(levels(mush$spore_print_color), c("Black","Brown","Buff","Chocolate","Green","Orange","Purple","White","Yellow"))
+  mush$spore_print_color[mush$spore_print_color == "k"] = "Black"
+  mush$spore_print_color[mush$spore_print_color == "n"] = "Brown"
+  mush$spore_print_color[mush$spore_print_color == "b"] = "Buff"
+  mush$spore_print_color[mush$spore_print_color == "h"] = "Chocolate"
+  mush$spore_print_color[mush$spore_print_color == "r"] = "Green"
+  mush$spore_print_color[mush$spore_print_color == "o"] = "Orange"
+  mush$spore_print_color[mush$spore_print_color == "u"] = "Purple"
+  mush$spore_print_color[mush$spore_print_color == "w"] = "White"
+  mush$spore_print_color[mush$spore_print_color == "y"] = "Yellow"
+  
+  # population
+  levels(mush$population) = c(levels(mush$population), c("Abundnant","Clustered","Numerous","Scattered","Several","Solitary"))
+  mush$population[mush$population == "a"] = "Abundnant"
+  mush$population[mush$population == "c"] = "Clustered"
+  mush$population[mush$population == "n"] = "Numerous"
+  mush$population[mush$population == "s"] = "Scattered"
+  mush$population[mush$population == "v"] = "Several"
+  mush$population[mush$population == "y"] = "Solitary"
+  
+  # habitat
+  levels(mush$habitat) = c(levels(mush$habitat), c("Grasses","Leaves","Meadows","Paths","Urban","Waste","Woods"))
+  mush$habitat[mush$habitat == "g"] = "Grasses"
+  mush$habitat[mush$habitat == "l"] = "Leaves"
+  mush$habitat[mush$habitat == "m"] = "Meadows"
+  mush$habitat[mush$habitat == "p"] = "Paths"
+  mush$habitat[mush$habitat == "u"] = "Urban"
+  mush$habitat[mush$habitat == "w"] = "Waste"
+  mush$habitat[mush$habitat == "d"] = "Woods"
+
+  return(mush)
+}
