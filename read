@@ -9,7 +9,7 @@ agrocybe_molesta = function(){
   # class
   levels(mush$class) = c(levels(mush$class), c("Edible","Poisonous"))
   mush$class[mush$class == "e"] = "Edible"
-  mush$class[mush$class == 'p'] = "Poisonous"
+  mush$class[mush$class == "p"] = "Poisonous"
 
   # cap_shape
   levels(mush$cap_shape) = c(levels(mush$cap_shape), c("Bell","Conical","Convex","Flat","Knobbed","Sunken"))
