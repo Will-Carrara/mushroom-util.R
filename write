@@ -1,0 +1,29 @@
+# convert and create numeric dataframe (False Deathcap)
+amanita_citrina = function(mush){
+
+  mush$class <- as.numeric(mush$class) -3
+  mush$cap_shape <- as.numeric(mush$cap_shape)
+  mush$cap_surface <- as.numeric(mush$cap_surface)
+  mush$cap_color <- as.numeric(mush$cap_color)
+  mush$bruises <- as.numeric(mush$bruises)
+  mush$odor <- as.numeric(mush$odor)
+  mush$gill_attachment <- as.numeric(mush$gill_attachment)
+  mush$gill_spacing <- as.numeric(mush$gill_spacing)
+  mush$gill_size <- as.numeric(mush$gill_size)
+  mush$gill_color <- as.numeric(mush$gill_color)
+  mush$stalk_shape <- as.numeric(mush$stalk_shape)
+  mush$stalk_root <- as.numeric(mush$stalk_root)
+  mush$stalk_surface_above_ring <- as.numeric(mush$cap_shape)
+  mush$stalk_surface_below_ring <- as.numeric(mush$cap_shape)
+  mush$stalk_color_above_ring <- as.numeric(mush$stalk_color_above_ring)
+  mush$stalk_color_below_ring <- as.numeric(mush$stalk_color_below_ring)
+  mush$veil_type <- as.numeric(mush$veil_type)
+  mush$veil_color <- as.numeric(mush$veil_color)
+  mush$ring_number <- as.numeric(mush$ring_number)
+  mush$ring_type <- as.numeric(mush$ring_type)
+  mush$spore_print_color <- as.numeric(mush$spore_print_color)
+  mush$population <- as.numeric(mush$population)
+  mush$habitat <- as.numeric(mush$habitat)
+  
+  return(mush)
+}
