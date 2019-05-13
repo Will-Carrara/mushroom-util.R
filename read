@@ -48,7 +48,7 @@ agrocybe_molesta = function(){
   
   # odor
   levels(mush$odor)[match("a",levels(mush$odor))] = "almond"
-  levels(mush$odor)[match("l",levels(mush$odor))] = "anis"
+  levels(mush$odor)[match("l",levels(mush$odor))] = "anise"
   levels(mush$odor)[match("c",levels(mush$odor))] = "creosote"
   levels(mush$odor)[match("y",levels(mush$odor))] = "fishy"
   levels(mush$odor)[match("f",levels(mush$odor))] = "foul"
