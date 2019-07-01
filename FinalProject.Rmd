@@ -56,28 +56,28 @@ set.seed(1)
 ***Attribute Information:***
 
 1. **class:** edible, poisonous.
-1. **cap_shape:** bell, conical, convex, flat, knobbed, sunken.
-2. **cap_surface:** fibrous, grooves, scaly, smooth.
-3. **cap_color:** brown, buff, cinnamon, gray, green, pink, purple, red, white, yellow.
-4. **bruises:** yes, no.
-5. **odor:** almond, anise, creosote, fishy, foul, musty, none, pungent, spicy.
-6. **gill_attachment:** attached, descending, free, notched.
-7. **gill_spacing:** close, crowded, distant.
-8. **gill_size:** broad, narrow.
-9. **gill_color:** black, brown, buff, chocolate, gray, green, orange, pink, purple, red, white, yellow.
-10. **stalk_shape:** enlarging, tapering.
-11. **stalk_root:** bulbous, club, cup, equal, rhizomorphs, rooted, ?.
-12. **stalk_surface_above_ring:** fibrous, scaly, silky, smooth.
-13. **stalk_surface_below_ring:** fibrous, scaly, silky, smooth. 
-14. **stalk_color_above_ring:** brown, buff, cinnamon, gray, orange, pink, red, white, yellow. 
-15. **stalk_color_below_ring:** brown, buff, cinnamon, gray, orange, pink, red, white, yellow.
-16. **veil_type:** partial, universal. 
-17. **veil_color:** brown, orange, white, yellow. 
-18. **ring_number:** none, one, two. 
-19. **ring_type:** cobwebby, evanescent, flaring, large, none, pendant, sheathing, zone.
-20. **spore_print_color:** black, brown, buff, chocolate, green, orange, purple, white, yellow.
-21. **population:** abundant, clustered, numerous, scattered, several, solitary. 
-22. **habitat:** grasses, leaves, meadows, paths, urban, waste, woods.
+2. **cap_shape:** bell, conical, convex, flat, knobbed, sunken.
+3. **cap_surface:** fibrous, grooves, scaly, smooth.
+4. **cap_color:** brown, buff, cinnamon, gray, green, pink, purple, red, white, yellow.
+5. **bruises:** yes, no.
+6. **odor:** almond, anise, creosote, fishy, foul, musty, none, pungent, spicy.
+7. **gill_attachment:** attached, descending, free, notched.
+8. **gill_spacing:** close, crowded, distant.
+9. **gill_size:** broad, narrow.
+10. **gill_color:** black, brown, buff, chocolate, gray, green, orange, pink, purple, red, white, yellow.
+11. **stalk_shape:** enlarging, tapering.
+12. **stalk_root:** bulbous, club, cup, equal, rhizomorphs, rooted, ?.
+13. **stalk_surface_above_ring:** fibrous, scaly, silky, smooth.
+14. **stalk_surface_below_ring:** fibrous, scaly, silky, smooth. 
+15. **stalk_color_above_ring:** brown, buff, cinnamon, gray, orange, pink, red, white, yellow. 
+16. **stalk_color_below_ring:** brown, buff, cinnamon, gray, orange, pink, red, white, yellow.
+17. **veil_type:** partial, universal. 
+18. **veil_color:** brown, orange, white, yellow. 
+19. **ring_number:** none, one, two. 
+20. **ring_type:** cobwebby, evanescent, flaring, large, none, pendant, sheathing, zone.
+21. **spore_print_color:** black, brown, buff, chocolate, green, orange, purple, white, yellow.
+22. **population:** abundant, clustered, numerous, scattered, several, solitary. 
+23. **habitat:** grasses, leaves, meadows, paths, urban, waste, woods.
 
 ### Pre-processing Data
 
@@ -395,7 +395,7 @@ fit_penalty = rpart(class ~ ., data = tr_mush, method = "class", parms = list(lo
 rpart.plot(fit_penalty, box.palette=c(e,p), branch.lwd=2, yesno=2, shadow.col="gray", main="Model 2")
 ```
 
-We notice that our tree has changed pretty dramatically with the introduction of our penalty system. Below is a plot which illustrates the cross-validation results with the relative x-value error in relation to the model levels. We can obtain very high accuracy by increasing the levels and complexity of the tree, but this will ultimately over-fit the data so we must be careful.
+Here we notice that our tree has changed dramatically with the introduction of our penalty system. Below is a plot which illustrates the cross-validation results with the relative x-value error in relation to the model levels. We can obtain very high accuracy by increasing the levels and complexity of the tree, but this will ultimately over-fit the data so we must be careful.
 
 ```{r fig.align="center", , fig.cap="**Figure 10:** relative x-val error in relation to the model 2 levels."}
 # visualize cross-validation results
