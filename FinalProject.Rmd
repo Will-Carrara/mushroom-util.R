@@ -40,8 +40,8 @@ library(ggplot2)
 library(rpart.plot)
 
 # utility files 
-source("https://raw.githubusercontent.com/grbruns/cst383/master/lin-regr-util.R")
-source("https://raw.githubusercontent.com/grbruns/cst383/master/class-util.R")
+source("https://raw.github.com/Will-Carrara/mushroom-util.R/master/lin-regr-util.R")
+source("https://raw.github.com/Will-Carrara/mushroom-util.R/master/class-util.R")
 
 # data cleaning files
 source("https://raw.githubusercontent.com/Will-Carrara/mushroom-util.R/master/read")
@@ -81,7 +81,7 @@ set.seed(1)
 
 ### Pre-processing Data
 
-```{r}
+```{r, cache=TRUE}
 # read & process (Bearded Fieldcap)
 mush = agrocybe_molesta()
 
