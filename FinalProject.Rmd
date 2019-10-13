@@ -9,18 +9,18 @@ output:
 
 <style>
 body {
-text-align: justify}
+  text-align: justify
+}
 </style>
 
 <style type="text/css">
-@import "https://highlightjs.org/static/demo/styles/lightfair.css";
+  @import "https://highlightjs.org/static/demo/styles/lightfair.css";
 </style>
 
 <script>
    $(document).ready(function() {
      $head = $('#header');
-     $head.prepend('<img src=\"https://www.morganpadgett.org/uploads/4/9/5/9/49596649/s905317008908675692_p270_i1_w2560.jpeg\" style=\"float: right;width: 150px;\"/>')
-   });
+     $head.prepend('<img src=\"https://www.morganpadgett.org/uploads/4/9/5/9/49596649/s905317008908675692_p270_i1_w2560.jpeg\" style=\"float: right;width: 150px;\"/>')});
 </script>
 
 ```{r global_options, include=FALSE}
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(prompt=TRUE, comment="", echo=TRUE)
 ***
 #### Abstract
 
-Derived from the Audobon Society Field Guide this data set includes physical descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family. Each species is identified as definitely edible, definitely poisonous, or of unknown edibility and not recommended. This latter class was combined with the poisonous one. The guide clearly states that there is no simple rule for determining the edibility of a mushroom; no rule like <i>"leaflets three, let it be"</i> as for Poisonous Oak and Ivy. The goal of this report is to determine the acceptable criteria for mushroom edibility using various machine learning models and if applicable, even a clever mnemonic.  
+Derived from the Audubon Society Field Guide this data set includes physical descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family. Each species is identified as definitely edible, definitely poisonous, or of unknown edibility and not recommended. This latter class was combined with the poisonous one. The guide clearly states that there is no simple rule for determining the edibility of a mushroom; no rule like <i>"leaflets three, let it be"</i> as for Poisonous Oak and Ivy. The goal of this report is to determine the acceptable criteria for mushroom edibility using various machine learning models and if applicable, even a clever mnemonic.  
 
 Resources: [https://archive.ics.uci.edu/ml/datasets/mushroom](https://archive.ics.uci.edu/ml/datasets/mushroom)
 
@@ -93,7 +93,7 @@ The mycology data set contains `r nrow(mush)` instances and has `r round(mean(is
 
 We initially analyze the data integrity and find that of the `r round(mean(is.na(mush)), 2)`% missing data in the set, 100% of the missing values are located within the <i>stalk_root</i> attribute. Of these `r nrow(mush$stalk_root)` instances, there are a total of `r sum(is.na(mush$stalk_root))` <i>NA</i> values, making the integrity of this class approximately `r round(mean(complete.cases(mush$stalk_root)), 2) * 100`%. Through further examination, we also find that there is a 0.00% variance in the <i>veil_type</i> attribute in the mycology data. To improve the performance of our models, these attributes have been removed.   
 
-```{r fig.align="center", fig.cap="**Figure n:** Here is a really important caption."}
+```{r}
 mush$veil_type = NULL
 mush$stalk_root = NULL
 
@@ -441,7 +441,7 @@ agaricus_bitorquis = function(model, version){
   
   lines(x=tr_sizes, y=te_errs, col=e, lty=2, lwd=2.5)
   
-  legend("topright", legend=c("Training Data", "Test Data"), col=c(e,p), lty=2, pch=c(1, NA), 
+  legend("topright", legend=c("Training Data", "Test Data"), col=c(p,e), lty=2, pch=c(1, NA), 
          inset=c(0,-.225), xpd=TRUE, bty="n", lwd=2)
   grid()
 }
