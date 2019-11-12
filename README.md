@@ -41,4 +41,4 @@
 ### Conclusion
 > Odor is by far the most important variable in terms of mushroom edibility. The Logistic Regression models performed with high accuracy, before optimizing a threshold value to achieve perfect recall. With some fine tuning, a classification tree managed to predict the edibility of mushroom perfectly. The classification tree approach was preferred due to the ease of implementation and interpretability of the results. If you ever find yourself hungry and wondering the forest just remember the simple mnemonic: “When the odor is almond, anise or none the mushroom is clean, unless the spore print color is green”.
 
-Please review the .pdf file for the full project!
+> Please review the .pdf file for the full project!
