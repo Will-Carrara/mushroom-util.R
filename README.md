@@ -4,8 +4,7 @@
 
 ### Abstract
 > Derived from the Audubon Society Field Guide this data set includes physical descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family. Each species is identified as definitely edible, definitely poisonous, or of unknown edibility and not recommended. This latter class was combined with the poisonous one. The guide clearly states that there is no simple rule for determining the edibility of a mushroom; no rule like “leaflets three, let it be” as for Poisonous Oak and Ivy. The goal of this report is to determine the acceptable criteria for mushroom edibility using various machine learning models and if applicable, even a clever mnemonic.
-
-"Connect lives with a slide of a finger."
+>
 
 ### Attribute Information:
 > The first version of your mobile app needs to offer a simple and intuitive user experience. Choosing features for your mobile app is a planning process that requires you to define the product vision, objectives, and themes fully. Some standard features can include:
